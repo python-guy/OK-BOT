@@ -6,6 +6,7 @@ prefix = "!" # This will be used at the start of commands.
 
 import discord
 from discord.ext import commands
+import random
 
 print ("Loading..")
 
@@ -37,7 +38,7 @@ async def on_message(message):
                 await message.channel.send(embed=embed)
                 cnt_num = 0
             else:
-                await message.add_reaction('🆗')
+                await message.add_reaction(random.choice("🆗", "👌", "👍", ))
                 prev_ok = message.author
                 cnt_num += 1
         else:
